@@ -7,7 +7,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="text-2xl font-semibold text-gray-800">Pretoria Student Accommodation</div>
           <nav className="flex space-x-8">
-            <a href="/users" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            <a href="/" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
               Users
             </a>
             <a href="/properties" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
