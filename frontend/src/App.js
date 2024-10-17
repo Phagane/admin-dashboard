@@ -1,9 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './components/Homepage/Homepage';
+import Header from './components/Layouts/Header';
 
-export default function App() {
+const App = () => {
   return (
-    <h1 className="text-3xl">
-      Hello world!
-    </h1>
+    <div className='app'>
+      <Header/>
+      <main className='app-main'>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
+
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;
