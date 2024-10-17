@@ -72,7 +72,7 @@ const PropertiesPage = () => {
               <td className="py-2 px-4">{property.furnished ? "Yes" : "No"}</td>
               <td className="py-2 px-4 capitalize">{property.genderAllowed}</td>
               <td className="py-2 px-4 capitalize">{property.occupancyType}</td>
-              <td className="px-6 py-4 border border-gray-300">
+              <td className="px-6 py-4 border-gray-300">
                 <div className="flex space-x-2">
                   <ButtonComponent text="View" variant="edit" />
                 </div></td>

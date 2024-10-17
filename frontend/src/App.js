@@ -5,6 +5,9 @@ import Header from './components/Layouts/Header';
 import AdminSignIn from './components/Authentication/AdminSignIn';
 import ApplicationForm from './components/Applicationpage/ApplicationForm';
 import PropertiesPage from './components/Propertiespage/PropertiesPage';
+import ApplicationView from './components/Applicationpage/ApplicationView';
+import PropertyDetailsPage from './components/Applicationpage/PropertyDetailsPage';
+
 const App = () => {
   return (
     <div className='app'>
@@ -14,7 +17,9 @@ const App = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/sign-in"  element={<AdminSignIn />} />
           <Route path="/application-form" element={<ApplicationForm />} />
+          <Route path="/application-view" element={<ApplicationView />} />
           <Route path="/properties-page" element={<PropertiesPage />} />
+          <Route path="/applications/:id" element={<PropertyDetailsPage />} />
         </Routes>
       </main>
     </div>
