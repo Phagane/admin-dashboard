@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const cors = require('cors')
 const morgan = require('morgan')
 const authRouter = require('./routes/authRouter')
+const adminRouter = require('./routes/adminRouter')
 
 dotenv.config({path: './config/config.env'})
 const app = express()
@@ -36,7 +37,8 @@ app.get('/', (req, res) =>{
 })
 
 app.options('*', cors())
-app.use('/admin', authRouter)
+app.use('/auth', authRouter)
+app.use('/admin', adminRouter)
 
 const port = process.env.port
 
