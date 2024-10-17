@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "app": "concurrently \"npm run server\" \"cd .. && cd frontend && npm run client\""
   },
   "keywords": [],
   "author": "",

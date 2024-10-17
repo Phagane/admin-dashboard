@@ -10,7 +10,7 @@ const Header = () => {
             <a href="/" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
               Users
             </a>
-            <a href="/properties" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            <a href="/properties-page" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
               Properties
             </a>
             <a href="/applications" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">

@@ -1,53 +1,29 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ButtonComponent from "../Homepage/ButtonComponent";
+import axios from "axios";
+
 const PropertiesPage = () => {
   const [properties, setProperties] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Using dummy data for properties
-    const dummyData = [
-      {
-        _id: "1",
-        name: "Sunny Apartment",
-        price: 3500,
-        location: "Cape Town",
-        furnished: true,
-        genderAllowed: "any",
-        occupancyType: "single",
-      },
-      {
-        _id: "2",
-        name: "Luxury Loft",
-        price: 5500,
-        location: "Johannesburg",
-        furnished: false,
-        genderAllowed: "male",
-        occupancyType: "sharing",
-      },
-      {
-        _id: "3",
-        name: "Garden Cottage",
-        price: 4500,
-        location: "Durban",
-        furnished: true,
-        genderAllowed: "female",
-        occupancyType: "single",
-      },
-      {
-        _id: "4",
-        name: "Modern Studio",
-        price: 3000,
-        location: "Pretoria",
-        furnished: false,
-        genderAllowed: "any",
-        occupancyType: "sharing",
-      },
-    ];
+    const fetchProperties = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/admin/properties"); // API call to get properties
+        setProperties(response.data); // Set properties to the fetched data
+      } catch (error) {
+        console.error("Error fetching properties:", error);
+      }
+    };
 
-    // Simulating data fetch with dummy data
-    setProperties(dummyData);
+    fetchProperties();
   }, []);
 
+  const handleViewClick = (propertyId) => {
+    navigate(`/property/${propertyId}`);
+  };
+  
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-2xl font-bold mb-6 text-center">Properties List</h1>
@@ -74,7 +50,11 @@ const PropertiesPage = () => {
               <td className="py-2 px-4 capitalize">{property.occupancyType}</td>
               <td className="px-6 py-4 border-gray-300">
                 <div className="flex space-x-2">
-                  <ButtonComponent text="View" variant="edit" />
+                <ButtonComponent
+                    text="View"
+                    variant="edit"
+                    onClick={() => handleViewClick(property._id)}  // Navigate on click
+                  />             
                 </div></td>
             </tr>
           ))}

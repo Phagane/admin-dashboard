@@ -16,7 +16,7 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 app.use(cors({
-    origin:'http://localhost:3001',
+    origin:'http://localhost:3000',
     method: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     credentials:true
 }))

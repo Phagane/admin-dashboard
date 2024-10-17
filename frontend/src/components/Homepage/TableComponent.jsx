@@ -19,7 +19,7 @@ const TableComponent = ({ users, onEdit, onDelete }) => {
             <tr key={index} className="bg-white border-b transition duration-200 hover:bg-gray-100">
               <td className="px-6 py-4 border border-gray-300 text-sm text-gray-800">{user.name}</td>
               <td className="px-6 py-4 border border-gray-300 text-sm text-gray-800">{user.email}</td>
-              <td className="px-6 py-4 border border-gray-300 text-sm text-gray-800">{user.phone}</td>
+              <td className="px-6 py-4 border border-gray-300 text-sm text-gray-800">{user.phoneNumber}</td>
               <td className="px-6 py-4 border border-gray-300 text-sm text-gray-800">{user.role}</td>
               <td className="px-6 py-4 border border-gray-300">
                 <div className="flex space-x-2">
