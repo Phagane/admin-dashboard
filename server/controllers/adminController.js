@@ -19,7 +19,7 @@ exports.getAllUsers = async (req, res) => {
 exports.getAllProperties = async (req, res) => {
     try {
     
-      const properties = await Property.find().select('name price description location furnished genderAllowed occupancyType');
+      const properties = await Property.find().select('name price location furnished genderAllowed occupancyType');
 
       res.status(200).json(properties); 
 
